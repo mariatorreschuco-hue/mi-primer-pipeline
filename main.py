@@ -1,3 +1,5 @@
+import sys
+
 def saludar():
     print("----------------------------------------")
     print("¡Hola desde el pipeline de GitHub Actions!")
