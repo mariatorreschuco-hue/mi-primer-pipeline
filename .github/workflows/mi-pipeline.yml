@@ -1,0 +1,28 @@
+name: Mi Primer Pipeline CI/CD
+
+# 1. DISPARADOR (Trigger)
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+# 2. JOBS (Tareas independientes)
+jobs:
+  construir-y-probar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Configurar entorno
+        run: echo "Configurando el entorno de prueba..."
+
+      - name: Ejecutar pruebas unitarias
+        run: |
+          echo "Corriendo pruebas..."
+          echo "¡Todas las pruebas pasaron correctamente!"
+
+      - name: Desplegar aplicación
+        run: echo "Desplegando la aplicación en producción..."
